@@ -1,6 +1,5 @@
 import React from 'react';
 import {motion} from 'framer-motion';
-import Interceptors from "undici-types/interceptors";
 
 const stairAnimation = {
     initial: {
