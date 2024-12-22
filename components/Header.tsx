@@ -22,8 +22,6 @@ const Header = () => {
                     </Link>
 
                 </div>
-
-
                 {/*   Mobile Nav*/}
                 <div className={`xl:hidden`}>
                     <MobileNav/>
