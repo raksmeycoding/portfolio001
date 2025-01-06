@@ -16,6 +16,10 @@ const MobileNav = () => {
         {name: "work", path: "/work "},
         {name: "resume", path: "/resume "},
         {name: "contact", path: "/contact "},
+        {
+            name: "login/signup",
+            path: '/auth',
+        }
     ]
     return (
         <Sheet>

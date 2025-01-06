@@ -25,6 +25,10 @@ const links = [
     {
         name: "contact",
         path: '/contact',
+    },
+    {
+        name: "login/signup",
+        path: '/auth',
     }
 
 ]
