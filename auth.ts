@@ -1,8 +1,8 @@
-import NextAuth, {Account} from "next-auth"
+import NextAuth, {Account, User} from "next-auth"
 import Google from "@auth/core/providers/google";
 import {AdapterUser} from "@auth/core/adapters";
 import connectDb from "@/lib/db";
-import {User} from "./models/user";
+import {User as UserDb} from "@/models/user";
 
 export const {handlers, signIn, signOut, auth} = NextAuth({
     providers: [
@@ -32,11 +32,11 @@ export const {handlers, signIn, signOut, auth} = NextAuth({
                     const {email, name, image, id} = user;
                     console.log("User: ", user)
                     await connectDb();
-                    const alreadyUser = await User.findOne({email});
+                    const alreadyUser = await UserDb.findOne({email});
                     console.log("alreadyUser:", alreadyUser);
 
                     if (!alreadyUser) {
-                        await User.create({firstName: name, lastName: image, email, image, id,})
+                        await UserDb.create({firstName: name, lastName: image, email, image, id,})
                     }
                     return true;
 
